@@ -1,11 +1,9 @@
 package com.eastho.test;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
 
-@SpringBootTest
+
 class CT42746 {
     /*
     https://school.programmers.co.kr/learn/courses/30/lessons/42746
@@ -25,8 +23,7 @@ class CT42746 {
     [3, 30, 34, 5, 9]	"9534330"
 
      */
-    @Test
-    void contextLoads() {
+    public static void main(String[] args) {
         int[] numbers = {6, 10, 2, 9, 20, 30, 44, 20, 97, 23, 56};
 
         System.out.println(permutation(numbers));

@@ -1,11 +1,9 @@
 package com.eastho.test;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Stack;
 
-@SpringBootTest
+
 class CT12909 {
     /*
     https://school.programmers.co.kr/learn/courses/30/lessons/12909
@@ -19,8 +17,7 @@ class CT12909 {
     문자열 s의 길이 : 100,000 이하의 자연수
     문자열 s는 '(' 또는 ')' 로만 이루어져 있습니다.
      */
-    @Test
-    void contextLoads() {
+    public static void main(String[] args) {
         String s = "(())()(";
         boolean answer = true;
 

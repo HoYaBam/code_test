@@ -1,11 +1,7 @@
 package com.eastho.test;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
 import java.util.*;
 
-@SpringBootTest
 class CT118667 {
     /*
     https://school.programmers.co.kr/learn/courses/30/lessons/118667
@@ -37,10 +33,9 @@ class CT118667 {
 
 
      */
-    int i = 0;
+    static int i = 0;
 
-    @Test
-    void contextLoads() {
+    public static void main(String[] args) {
 //        int[] queue1 = {3, 2, 7, 2};
 //        int[] queue2 = {4, 6, 5, 1};
 //        int[] queue1 = {1, 2, 1, 2};
@@ -55,7 +50,7 @@ class CT118667 {
         System.out.println(i);
     }
 
-    private void test(Queue<Integer> queue1, Queue<Integer> queue2) {
+    public static void test(Queue<Integer> queue1, Queue<Integer> queue2) {
         long sum1 = queue1.stream().mapToLong(Integer::intValue).sum();
         long sum2 = queue2.stream().mapToLong(Integer::intValue).sum();
         long total = sum1 + sum2;

@@ -1,14 +1,12 @@
 package com.eastho.test;
 
-import org.junit.jupiter.api.Test;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.*;
 import java.util.stream.IntStream;
 
-@SpringBootTest
 class CT12939 {
     private static final Logger log = LoggerFactory.getLogger(CT12939.class);
 
@@ -20,8 +18,7 @@ class CT12939 {
         제한 조건
         s에는 둘 이상의 정수가 공백으로 구분되어 있습니다.
          */
-    @Test
-    void contextLoads() {
+    public static void main(String[] args) {
         String s = "-3 -2 -4 -5"; //	"1 4"
         String answer = "";
         String[] tokens = s.split(" ");

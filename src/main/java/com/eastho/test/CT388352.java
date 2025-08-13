@@ -1,12 +1,8 @@
 package com.eastho.test;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
 import java.util.*;
 
 
-@SpringBootTest
 class CT388352 {
 // https://school.programmers.co.kr/learn/courses/30/lessons/388352?language=java
     /*
@@ -24,8 +20,7 @@ class CT388352 {
      */
     static int answer = 0;
     static int[] arr;
-	@Test
-	void contextLoads() {
+    public static void main(String[] args) {
         int n = 10;
         int[][] q = {
                 {1, 2, 3, 4, 5},
@@ -41,7 +36,7 @@ class CT388352 {
         comb(n, q, ans, 0, new ArrayList<>());
         System.out.println(answer);
     }
-    public void comb(int n, int[][] q, int[] ans, int cur, List<Integer> list) {
+    public static void comb(int n, int[][] q, int[] ans, int cur, List<Integer> list) {
         if(list.size() == 5) {
             if(isPossible(q, ans, list)) answer++;
             return;
@@ -54,7 +49,7 @@ class CT388352 {
         }
     }
 
-    public boolean isPossible(int[][] q, int[] ans, List<Integer> list) {
+    public static boolean isPossible(int[][] q, int[] ans, List<Integer> list) {
         for (int i=0 ; i< q.length; i++) {
             int cnt = 0;
             for (int j=0 ; j< q[i].length; j++) {

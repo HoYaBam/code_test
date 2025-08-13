@@ -1,13 +1,10 @@
 package com.eastho.test;
 
-import org.junit.jupiter.api.Test;
-
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.*;
 
 
-@SpringBootTest
+
 class CTGPT {
 /*
 	결제 시스템은 동일한 카드로 동시에 여러 결제가 시도될 경우 중복 결제를 방지해야 합니다.
@@ -31,8 +28,8 @@ class CTGPT {
 	출력
 		요청 순서대로 "APPROVED" 또는 "DENIED" 문자열 리스트를 반환
 */
-	@Test
-	void contextLoads() {
+
+    public static void main(String[] args) {
         Map<String, PaymentRequest> latestPaymentMap = new HashMap<>();
 
         List<PaymentRequest> paymentRequestList = List.of(
