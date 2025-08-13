@@ -3,11 +3,10 @@ package com.eastho.test;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.math.BigInteger;
 import java.util.Arrays;
 
 @SpringBootTest
-class BigNumberTests {
+class CT42746 {
     /*
     https://school.programmers.co.kr/learn/courses/30/lessons/42746
     0 또는 양의 정수가 주어졌을 때, 정수를 이어 붙여 만들 수 있는 가장 큰 수를 알아내 주세요.

@@ -6,12 +6,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.*;
-import java.util.Optional;
 import java.util.stream.IntStream;
 
 @SpringBootTest
-class InitialValueMaximumValueTests {
-    private static final Logger log = LoggerFactory.getLogger(InitialValueMaximumValueTests.class);
+class CT12939 {
+    private static final Logger log = LoggerFactory.getLogger(CT12939.class);
 
     /*
         https://school.programmers.co.kr/learn/courses/30/lessons/12939

@@ -4,10 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @SpringBootTest
-class TwoQueueTests {
+class CT118667 {
     /*
     https://school.programmers.co.kr/learn/courses/30/lessons/118667
     길이가 같은 두 개의 큐가 주어집니다. 하나의 큐를 골라 원소를 추출(pop)하고, 추출된 원소를 다른 큐에 집어넣는(insert) 작업을 통해 각 큐의 원소 합이 같도록 만들려고 합니다.

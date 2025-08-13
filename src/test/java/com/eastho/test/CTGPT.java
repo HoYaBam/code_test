@@ -8,7 +8,7 @@ import java.util.*;
 
 
 @SpringBootTest
-class PaymentTests {
+class CTGPT {
 /*
 	결제 시스템은 동일한 카드로 동시에 여러 결제가 시도될 경우 중복 결제를 방지해야 합니다.
 	다음 조건을 만족하는 결제 승인 서비스를 구현하세요.
