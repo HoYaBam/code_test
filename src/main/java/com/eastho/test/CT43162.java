@@ -28,10 +28,8 @@ public class CT43162 {
 //예상 결과: 3
     public static void main(String[] args) {
         int n = 5;
-        int[][] computers = {{1, 1, 0, 0, 0}, {1, 1, 0, 0, 0}, {0, 0, 0, 0, 1}, {0, 0, 1, 1, 0}, {0, 0, 1, 1, 0}};
+        int[][] computers = {{1, 1, 0, 0, 0}, {1, 1, 0, 0, 0}, {0, 0, 1, 1, 0}, {0, 0, 1, 1, 0}, {0, 0, 0, 0, 1}};
         int answer = 0;
-
-        ArrayList<ArrayList<Integer>> arr = new ArrayList<>();
 
         boolean[] visited = new boolean[n];
 
@@ -39,20 +37,19 @@ public class CT43162 {
             if (!visited[i]) {
                 visited[i] = true;
                 test(i, visited, computers);
+                answer++;
             }
         }
 
         System.out.println(Arrays.toString(visited));
-//        answer = arr.size();
-//        System.out.println(arr);
-//        System.out.println(answer);
+        System.out.println(answer);
     }
 
     public static void test(int i, boolean[] visited, int[][] computers) {
         visited[i] = true;
         for (int j = 0; j < visited.length; j++) {
             if (computers[i][j] == 1 && !visited[j]) {
-                test(i, visited, computers);
+                test(j, visited, computers);
             }
         }
     }
