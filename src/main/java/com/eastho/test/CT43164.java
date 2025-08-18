@@ -23,34 +23,35 @@ public class CT43164 {
     {{"ICN", "JFK"}, {"HND", "IAD"}, {"JFK", "HND"}}	                            ["ICN", "JFK", "HND", "IAD"]
     {{"ICN", "SFO"}, {"ICN", "ATL"}, {"SFO", "ATL"}, {"ATL", "ICN"}, {"ATL","SFO"}}	["ICN", "ATL", "ICN", "SFO", "ATL", "SFO"]
  */
+    private static List<String> result = new ArrayList<>();
+
+
     public static void main(String[] args) {
-        String[][] tickets = {{"ICN", "JFK"}, {"HND", "IAD"}, {"JFK", "HND"}};
+        String[][] tickets = {{"ICN", "SFO"}, {"ICN", "ATL"}, {"SFO", "ATL"}, {"ATL", "ICN"}, {"ATL","SFO"}};
         String[] answer = {};
 
+        boolean[] visit = new boolean[tickets.length];
         String target = "ICN";
+        dfs(0, target, visit, target, tickets);
+        Collections.sort(result);
 
-        int cur = 0;
-        ArrayList<Integer> skipList = new ArrayList<>();
-        while (cur < tickets.length + 1) {
-            System.out.println(target);
-            ArrayList<Integer> countList = new ArrayList<>();
-            for (int i = 0; i < tickets.length; i++) {
-                if (skipList.contains(i)) continue;
-                if (target.equals(tickets[i][1])) {
-                    countList.add(i);
-                }
-            }
+        System.out.println(result);
+        answer = result.get(0).split(" ");
+        System.out.println(Arrays.toString(answer));
+    }
 
-            if (countList.size() == 1) {
-                skipList.add(countList.get(0));
-                target = tickets[countList.get(0)][1];
-            }
-            cur++;
+    private static void dfs(int cur, String target, boolean[] visit, String bb, String[][] tickets) {
+        if (cur == tickets.length) {
+            result.add(bb);
+            return;
         }
 
-
-
-
-        System.out.println(Arrays.toString(answer));
+        for (int i = 0; i < tickets.length; i++) {
+            if (tickets[i][0].equals(target) && !visit[i]) {
+                visit[i] = true;
+                dfs(cur + 1, tickets[i][1], visit, bb + " " + tickets[i][1] , tickets);
+                visit[i] = false;
+            }
+        }
     }
 }
