@@ -1,5 +1,7 @@
 package com.eastho.test;
 
+import java.util.*;
+
 public class CT87946 {
 /*
     https://school.programmers.co.kr/learn/courses/30/lessons/87946
@@ -39,12 +41,30 @@ public class CT87946 {
     남은 피로도는 50이며, 두 번째 던전을 돌기위해 필요한 "최소 필요 피로도"는 50이므로, 두 번째 던전을 탐험할 수 있습니다. 두 번째 던전의 "소모 피로도"는 40이므로, 던전을 탐험한 후 남은 피로도는 10입니다.
     따라서 이 경우 세 던전을 모두 탐험할 수 있으며, 유저가 탐험할 수 있는 최대 던전 수는 3입니다.
  */
+    private static int c = 0;
     public static void main(String[] args) {
         int k = 80;
         int[][] dungeons = {{80,20},{50,40},{30,10}};
         int answer = -1;
 
+        boolean[] visited = new boolean[dungeons.length];
+        bfs(0, k, dungeons, visited);
 
+        System.out.println(c);
+    }
 
+    private static void bfs (int cur, int k, int[][] dungeons, boolean[] visited) {
+
+        if (cur > c) {
+            c = cur;
+        }
+
+        for (int i = 0; i < dungeons.length; i++) {
+            if (k >= dungeons[i][0] && !visited[i]) {
+                visited[i] = true;
+                bfs(cur + 1, k - dungeons[i][1], dungeons, visited);
+                visited[i] = false;
+            }
+        }
     }
 }
