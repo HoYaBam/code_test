@@ -31,7 +31,6 @@ public class CT12987 {
         int[] A = {5, 1, 3, 7};
         int[] B = {2, 2, 6, 8};
 
-
         Arrays.sort(A);
         Arrays.sort(B);
         int count = 0;
