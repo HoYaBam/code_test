@@ -1,8 +1,5 @@
 package com.hoyabam.codeTest;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class CT161988 {
 /*
     https://school.programmers.co.kr/learn/courses/30/lessons/161988
