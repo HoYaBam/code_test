@@ -27,14 +27,31 @@ public class CT1843 {
 
     입출력 예
     arr	                                            result
-    ["1", "-", "3", "+", "5", "-", "8"]	            1
+    {"1", "-", "3", "+", "5", "-", "8"}           1
     ["5", "-", "3", "+", "1", "+", "2", "-", "4"]	3
      */
 
     public static void main(String[] args) {
-        String asd = "3";
+        String[] arr = {"1", "-", "3", "+", "5", "-", "8"};
 
-        int a = Integer.parseInt(asd);
-        System.out.println(a);
+        int max = 0;
+        int min = 0;
+        int sum = 0;
+        for (int i = 0; i < arr.length-1 ; i += 2) {	// 2계단씩 체크하기
+            int num = Integer.parseInt(arr[arr.length - 1 - i]);	// 뒤에서부터 숫자
+            String pm = arr[arr.length - 2 - i];	// 연산부호
+
+            if (pm.equals("+")) sum += num;		// +의 경우 sum에 더해준다.
+            else if (pm.equals("-")) {			// -의 경우
+                int temp1 = -(num + sum + min);
+                int temp2 = -num + sum + max;
+                int temp3 = -(num+ sum + max);
+                int temp4 = -(num + sum) + min;
+                max = Math.max(temp1, temp2);
+                min = Math.min(temp3, temp4);
+                sum = 0;
+            }
+        }
+        System.out.println(max + Integer.parseInt(arr[0]) + sum);
     }
 }
